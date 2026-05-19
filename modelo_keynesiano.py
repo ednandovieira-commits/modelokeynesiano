@@ -96,15 +96,15 @@ da_bs, vaz_bs, inj_bs, c_bs = gerar_curvas(st.session_state.base_params, y_range
 fig, ax = plt.subplots(figsize=(12, 7))
 
 # Referência (Cinza pontilhado)
-ax.plot(y_range, da_bs, color="gray", linestyle=":", alpha=0.4, label="DA Referência")
+ax.plot(y_range, da_bs, color="gray", alpha=0.4, label="DA Referência")
 ax.axvline(y_eq_bs, color="gray", linestyle="--", alpha=0.3)
 
 # Atual (Sólido)
 ax.plot(y_range, da_at, color="#1f77b4", lw=3, label="Demanda Agregada Atual (C+I+G+NX)")
-ax.plot(y_range, c_at, color="#2ca02c", lw=2, linestyle="--", label="Consumo (C)") 
+ax.plot(y_range, c_at, color="#2ca02c", lw=2, label="Consumo (C)") 
 ax.plot(y_range, vaz_at, color="#ff7f0e", lw=1.5, label="Vazamentos (S+T+M)")
 ax.axhline(inj_at, color="#9467bd", lw=1.5, label="Injeções (I+G+X)")
-ax.plot(y_range, y_range, color="black", alpha=0.2, label="Y = DA (45°)")
+ax.plot(y_range, y_range, color="black", alpha=0.2, linestyle="--", label="Y = DA (45°)")
 
 # Ponto de Equilíbrio
 ax.scatter(y_eq_at, y_eq_at, color="red", s=100, zorder=5, label=f"Equilíbrio: {y_eq_at:.1f}")
